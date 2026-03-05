@@ -953,7 +953,7 @@ def generate_response(app, message_body, wa_id, name, message_id=None):
     start_time = time.time()
     result = None
     try:
-        result_text, result_response_id = get_response_api(app, message_body, client, wa_id, message_id)
+        result_text, result_response_id = get_response_api(app, message_body, get_openai_client(), wa_id, message_id)
         elapsed_time = time.time() - start_time
         # Truncate the log_result for cleaner logging
         raw_log_text = result_text.replace('\\n', ' ').replace('\\r', '') if result_text else "[No response]"
