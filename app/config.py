@@ -52,6 +52,7 @@ def load_configurations(app):
     app.config["VERSION"] = os.getenv("VERSION")
     app.config["PHONE_NUMBER_ID"] = os.getenv("PHONE_NUMBER_ID")
     app.config["VERIFY_TOKEN"] = os.getenv("VERIFY_TOKEN")
+    app.config["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
     # --- Debugging: Log critical environment variables ---
     logging.info(f"DEBUG: ACCESS_TOKEN loaded: {'set' if app.config['ACCESS_TOKEN'] else 'not set'}")

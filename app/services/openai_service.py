@@ -42,23 +42,17 @@ OPENAI_MODEL_NAME_DEFAULT = "gpt-4o-mini"
 
 def get_openai_client():
     """
-    Inicializa el cliente de OpenAI de forma perezosa.
-    Utiliza el API key de la configuración de la app o de las variables de entorno.
+    Inicializa el cliente de OpenAI usando el API key de la config de Flask o del entorno.
     """
-    api_key = None
     try:
-        api_key = current_app.config.get("OPENAI_API_KEY")
+        api_key = current_app.config.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
     except Exception:
-        pass
-    
-    if not api_key:
         api_key = os.getenv("OPENAI_API_KEY")
-        
+
     if not api_key:
-        logging.error("❌ OPENAI_API_KEY no encontrada en la configuración ni en el entorno.")
-        # No levantamos excepción aquí para que la app pueda arrancar (ej. para verificar el webhook)
+        logging.error("❌ OPENAI_API_KEY no encontrada en la configuración.")
         return None
-        
+
     return OpenAI(api_key=api_key, timeout=20.0, max_retries=3)
 
 # Directorio para la base de datos (almacena el estado de threads)
