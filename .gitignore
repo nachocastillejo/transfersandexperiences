@@ -136,3 +136,4 @@ logs/
 !README.md
 !instructions/*.txt
 !instructions/*.json
+scripts/secrets.sh
