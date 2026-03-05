@@ -1,0 +1,232 @@
+[
+  {
+    "type": "function",
+    "name": "inscribir_lead_crm",
+    "description": "Inscribe a un lead en el CRM con toda la información que ha ido contestando: nombre, apellidos, email, dni, teléfono, dirección, localidad, código postal, provincia, situación laboral, titulación y referencia del curso.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "description": "Nombre de pila del lead."
+        },
+        "apellidos": {
+          "type": "string",
+          "description": "Apellidos del lead."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email de contacto del lead."
+        },
+        "dni": {
+          "type": "string",
+          "description": "DNI o documento de identidad del lead."
+        },
+        "telefono": {
+            "type": "string",
+            "description": "Número de teléfono del lead."
+        },
+        "direccion": {
+          "type": "string",
+          "description": "Dirección (calle, número, piso) del lead."
+        },
+        "provincia": {
+          "type": "string",
+          "enum": ["Araba/Álava", "Albacete", "Alicante/Alacant", "Almería", "Ávila", "Badajoz", "Balears, Illes", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Castellón/Castelló", "Ciudad Real", "Córdoba", "Coruña, A", "Cuenca", "Girona", "Granada", "Guadalajara", "Gipuzkoa", "Huelva", "Huesca", "Jaén", "León", "Lleida", "Rioja, La", "Lugo", "Madrid", "Málaga", "Murcia", "Navarra", "Ourense", "Asturias", "Palencia", "Palmas, Las", "Pontevedra", "Salamanca", "Santa Cruz de Tenerife", "Cantabria", "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel", "Toledo", "Valencia/València", "Valladolid", "Bizkaia", "Zamora", "Zaragoza", "Ceuta", "Melilla", "Fuera de España"],
+          "description": "Provincia de residencia del lead."
+        },
+        "situacion_laboral": {
+          "type": "string",
+          "enum": ["ocupado", "autónomo", "desempleado"],
+          "description": "Situación laboral del lead. Ocupado: trabajador por cuenta ajena."
+        },
+        "titulacion": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Código de titulación del CRM (por ejemplo: 1, 2, 4, 9, 17, 21, 22, 27, 10, 11, 12, 13, 14, 30). Si no se dispone de código, enviar el nivel (0–3) como entero."
+        },
+        "sector": {
+          "type": "string",
+          "enum": [
+            "Act. Físico Deportivas", "Administración y gestión", "Agrario", "Autónomos", "Comercio", "Construcción",
+            "Economía e Industria Digital (Teleco)", "Economia Social (Mutualistas y Fundaciones)", "Educación", "Energía",
+            "Finanzas", "Gran distribución (Almacenes)", "Industria Alimentaria", "Información y Comunicación y Artes Gráficas",
+            "Marítima y actividades portuarias", "Metal", "Pesca", "Química / Laboratorio", "Sanidad", "Servicios (Otros)",
+            "Servicios a las empresas", "Servicios Medioambientales", "Textil y Confección y Piel", "Transporte y Logística",
+            "Turismo", "N/A"
+          ],
+          "description": "Sector (opcional) cuando aplique. Usa 'N/A' si no corresponde."
+        },
+        "referencia_curso": {
+          "type": "string",
+          "description": "Código del curso en el que está interesado el lead. Si no hay código, se puede dejar en blanco."
+        }
+      },
+      "required": ["nombre", "apellidos", "email", "dni", "telefono", "direccion", "provincia", "situacion_laboral", "titulacion", "referencia_curso", "sector"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "recomendar_cursos",
+    "description": "⚠️ SOLO LLAMAR cuando tengas los 3 datos OBLIGATORIOS obtenidos de respuestas EXPLÍCITAS del usuario: 1) PROVINCIA (respuesta directa a '¿En qué provincia resides?'), 2) SITUACIÓN LABORAL (respuesta directa a '¿Cuál es tu situación laboral?'), 3) NIVEL DE FORMACIÓN (respuesta a 'Selecciona tu titulación académica'). ❌ PROHIBIDO inventar, inferir o adivinar estos valores. Si el usuario NO ha respondido explícitamente a estas 3 preguntas, NO llames a esta función. El nombre y email NO son suficientes.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "origen": {
+          "type": "string",
+          "enum": [
+            "Álava", "Albacete", "Alicante", "Almería", "Asturias", "Ávila", "Badajoz", "Baleares", "Barcelona", "Bizkaia", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "A Coruña", "Cuenca", "Gipuzkoa", "Girona", "Granada", "Guadalajara", "Huelva", "Huesca", "Jaén", "León", "Lleida", "Lugo", "Madrid", "Málaga", "Melilla", "Murcia", "Navarra", "Ourense", "Palencia", "Las Palmas", "Pontevedra", "La Rioja", "Salamanca", "Santa Cruz de Tenerife", "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel", "Toledo", "Valencia", "Valladolid", "Zamora", "Zaragoza"
+          ],
+          "description": "⚠️ OBLIGATORIO - SOLO usar la provincia que el usuario haya respondido EXPLÍCITAMENTE a la pregunta '¿En qué provincia resides?'. NUNCA inventar ni asumir una provincia. Si el usuario no ha dicho su provincia, NO llames a esta función."
+        },
+        "sector": {
+          "type": "string",
+          "enum": ["Act. Físico Deportivas", "Administración y gestión", "Agrario", "Autónomos", "Comercio", "Construcción", "Economía e Industria Digital (Teleco)", "Economia Social (Mutualistas y Fundaciones)", "Educación", "Energía", "Finanzas", "Gran distribución (Almacenes)", "Industria Alimentaria", "Información y Comunicación y Artes Gráficas", "Marítima y actividades portuarias", "Metal", "Pesca", "Química / Laboratorio", "Sanidad", "Servicios (Otros)", "Servicios a las empresas", "Servicios Medioambientales", "Textil y Confección y Piel", "Transporte y Logística", "Turismo", "N/A"],
+          "description": "Ámbito sectorial CNAE simplificado. Usa 'N/A' cuando no aplique."
+        },
+        "situacion_laboral": {
+          "type": "string",
+          "enum": ["desempleado", "ocupado", "autónomo"],
+          "description": "⚠️ OBLIGATORIO - SOLO usar la situación laboral que el usuario haya respondido EXPLÍCITAMENTE a la pregunta '¿Cuál es tu situación laboral?'. Aunque el usuario mencione algo de pasada, DEBES confirmar con la pregunta formal. NUNCA inventar este valor."
+        },
+        "nivel_formacion": {
+          "type": "string",
+          "enum": ["Nivel 0", "Nivel 1", "Nivel 2", "Nivel 3"],
+          "description": "⚠️ OBLIGATORIO - SOLO usar el nivel que el usuario haya seleccionado EXPLÍCITAMENTE de la lista de titulaciones. NUNCA inventar ni asumir un nivel de formación. Si el usuario no ha respondido esta pregunta, NO llames a esta función. Mapeo: 'SIN ESTUDIOS'→Nivel 0; 'ESTUDIOS PRIMARIOS'→Nivel 1; 'FP GRADO MEDIO'→Nivel 2; 'ESO'→Nivel 2; 'BACHILLERATO'→Nivel 3; 'DOCTORADO'→Nivel 3; 'MÁSTER'→Nivel 3; 'FP GRADO SUPERIOR'→Nivel 3; 'GRADO UNIVERSITARIO'→Nivel 3; 'CERT. PROF. NIVEL 1'→Nivel 1; 'ACCESO UNI >25'→Nivel 3; 'CERT. PROF. NIVEL 2'→Nivel 2; 'CERT. PROF. NIVEL 3'→Nivel 3; 'ENSEÑ. PROF. MÚSICA Y DANZA'→Nivel 0."
+        },
+        "modalidad": {
+          "type": "string",
+          "enum": ["Online", "Aula Virtual", "Presencial", "N/A"],
+          "description": "Filtro opcional. Solo incluir cuando el usuario pida explícitamente una modalidad concreta. Usa 'N/A' cuando no aplique."
+        },
+        "tematica": {
+          "type": "string",
+          "description": "Filtro opcional de temática(s) del curso. Solo incluir cuando el usuario exprese interés explícito en cursos de una o varias temáticas específicas (ej: 'idiomas', 'marketing, gestión', 'sanidad'). Puede contener múltiples temáticas separadas por comas. Usa 'N/A' cuando no aplique."
+        },
+        "codigo": {
+          "type": "string",
+          "description": "Filtro opcional por código exacto del curso (columna 'Código'). Usa 'N/A' cuando no aplique."
+        },
+        "pagina": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Número de página de resultados (1, 2 o 3)."
+        }
+      },
+      "required": ["origen", "situacion_laboral", "nivel_formacion", "pagina", "sector", "modalidad", "tematica", "codigo"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "check_availability",
+    "description": "Checks if the specified date and time suggested by the client are available in Google Calendar. This function verifies whether there are any existing events or conflicts in the specified calendar and returns a confirmation of availability.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "appointment_time": {
+          "type": "string",
+          "description": "Date and time in ISO 8601 format WITH TIMEZONE (e.g., '2025-01-30T14:15:00')"
+        }
+      },
+      "required": ["appointment_time"],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "cancel_appointment",
+    "description": "Cancels an existing appointment by retrieving parameters such as name, email, phone number, and appointment time in a format suitable for Google Calendar.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "required": [
+        "name",
+        "email",
+        "phone",
+        "appointment_time"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the person cancelling the appointment."
+        },
+        "email": {
+          "type": "string",
+          "description": "Valid email address of the person cancelling the appointment."
+        },
+        "phone": {
+          "type": "string",
+          "description": "Valid phone number of the person cancelling the appointment, including country code if applicable."
+        },
+        "appointment_time": {
+          "type": "string",
+          "description": "Date and time of the appointment in ISO 8601 format WITH TIMEZONE (e.g., '2025-01-30T14:15:00+01:00')."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "detect_appointment",
+    "description": "Detects an appointment and retrieves parameters such as name, email, phone number, and time in a format suitable for Google Calendar.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "required": [
+        "name",
+        "email",
+        "phone",
+        "appointment_time"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the person scheduling the appointment."
+        },
+        "email": {
+          "type": "string",
+          "description": "Valid email address of the person scheduling the appointment."
+        },
+        "phone": {
+          "type": "string",
+          "description": "Valid phone number of the person scheduling the appointment, including country code if applicable."
+        },
+        "appointment_time": {
+          "type": "string",
+          "description": "Date and time in ISO 8601 format WITH TIMEZONE (e.g., '2025-01-30T14:15:00+01:00')."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "collect_contact",
+    "description": "Guarda en el estado de inscripción el nombre y email del usuario cuando ambos se proporcionan.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nombre de pila del usuario."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email de contacto del usuario."
+        }
+      },
+      "required": [
+        "name",
+        "email"
+      ],
+      "additionalProperties": false
+    }
+  }
+]

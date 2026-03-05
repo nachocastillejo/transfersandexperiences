@@ -1,0 +1,53 @@
+{
+  "fast_model": "gpt-4o-mini",
+  "patterns": {
+    "greetings": [
+      "\\bhola\\b",
+      "\\bbuenas\\b",
+      "\\bbuenos dias\\b",
+      "\\bbuenas tardes\\b",
+      "\\bbuenas noches\\b",
+      "\\bhello\\b",
+      "\\bhi\\b",
+      "\\bhey\\b"
+    ],
+    "email": [
+      "\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\\b"
+    ],
+    "names": [
+      "aaron", "abel", "abraham", "adrian", "adrián", "agustin", "agustín", "ainhoa", "aitana",
+      "aitor", "alba", "alberto", "alejandra", "alejandro", "alicia", "alma", "alonso", "alvaro",
+      "álvaro", "amanda", "ana", "andrea", "andres", "andrés", "angel", "ángel", "antón",
+      "antonio", "arantxa", "aritz", "arnau", "arnoldo", "arturo", "bárbara", "beatriz", "begoña",
+      "belen", "belén", "beltran", "borja", "bruno", "camila", "carla", "carlos", "carmen",
+      "catalina", "cecilia", "césar", "clara", "cristina", "cristóbal", "daniel", "daniela", "david",
+      "diego", "dolores", "dulce", "eduarda", "eduardo", "elena", "elisa", "emilio", "encarnacion",
+      "encarnación", "enrique", "ernesto", "esteban", "esther", "eulogio", "eva", "fátima", "federico",
+      "felipe", "fernando", "fran", "francisco", "gabriel", "gema", "gloria", "gonzalo", "guadalupe",
+      "guillermo", "hector", "héctor", "ibai", "ignacio", "iker", "ines", "inigo", "íñigo",
+      "irene", "isaac", "isabel", "israel", "ivan", "jaime", "jan", "javier", "jesus",
+      "jesús", "joan", "jon", "jorge", "jose", "josé", "jose luis", "josé luis", "jose manuel",
+      "josé manuel", "jose maria", "josé maría", "josefa", "juan", "juan carlos", "juani", "juanjo",
+      "julian", "julián", "julio", "karen", "karla", "kevin", "laura", "laureano", "leire",
+      "leo", "leticia", "lidia", "lola", "lorena", "lourdes", "lucas", "lucia", "luis",
+      "luisa", "luna", "maite", "manuel", "manuela", "marc", "marcela", "marcos", "maria",
+      "maría", "maria del mar", "maría del mar", "maria jose", "maría josé", "marta", "martin", "martín",
+      "martina", "meritxell", "miguel", "mireia", "miren", "monica", "mónica", "nacho", "natalia",
+      "noa", "noelia", "nuria", "olga", "oriol", "oscar", "pablo", "paco", "paola",
+      "patricia", "paula", "paz", "pedro", "pepe", "rafa", "ramon", "raquel", "raul", "raúl", "rebeca", 
+      "ricardo", "roberto", "rocio", "rocío", "rosa", "ruben", "rubén", "salvador", "sandra", "santiago", 
+      "sara", "sergio", "sheila", "silvia", "sofia", "sofía", "sonia", "susana", "tamara", "teresa", "tomas",
+      "veronica", "verónica", "vicente", "victor", "victoria", "xavier", "ximena", "yolanda"
+    ],
+    "provinces": [
+      "a coruna", "a coruña", "alava", "albacete", "alicante", "almeria", "araba", "asturias", "avila",
+      "badajoz", "barcelona", "bizkaia", "burgos", "caceres", "cadiz", "cantabria", "castellon", "ceuta",
+      "ciudad real", "cordoba", "cuenca", "gerona", "gipuzkoa", "girona", "granada", "guadalajara", "guipuzcoa",
+      "huelva", "huesca", "illes balears", "islas baleares", "jaen", "la coruna", "la coruña", "la rioja",
+      "larioja", "las palmas", "leon", "lleida", "lugo", "madrid", "malaga", "melilla", "murcia",
+      "navarra", "orense", "ourense", "palencia", "pontevedra", "salamanca", "santa cruz de tenerife", "segovia",
+      "sevilla", "soria", "tarragona", "teruel", "toledo", "valencia", "valladolid", "vizcaya", "zamora",
+      "zaragoza"
+    ]
+  }
+}
