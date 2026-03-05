@@ -278,7 +278,14 @@
             phones.forEach(phone => {
                 const msgs = groupedChats[phone];
                 const lastMsg = msgs[msgs.length - 1];
-                let displayPhone = lastMsg.sender && !["Usuario", "Bot", "🤖 BOT"].includes(lastMsg.sender) ? lastMsg.sender : phone;
+                // Buscar el nombre del contacto en mensajes entrantes
+                let displayPhone = phone;
+                for (let i = msgs.length - 1; i >= 0; i--) {
+                    if (msgs[i].direction === 'inbound' && msgs[i].sender && !["Usuario"].includes(msgs[i].sender)) {
+                        displayPhone = msgs[i].sender;
+                        break;
+                    }
+                }
 
                 const div = document.createElement('div');
                 div.className = `contact-item ${phone === currentPhone ? 'active' : ''}`;
