@@ -1,0 +1,46 @@
+* Act. Físico Deportivas: Este sector engloba actividades económicas relacionadas con el deporte y el ejercicio físico, incluyendo gestión de gimnasios, clubes, polideportivos, eventos y formación deportiva y recreativa.
+
+* Administración y gestión: Incluye gestión de sedes centrales, promoción y administración inmobiliaria, intermediación comercial por cuenta de terceros y servicios de apoyo a oficina (fotocopias, traducción), organización de ferias y congresos y actividades de organizaciones empresariales, profesionales y sindicales.
+
+* Agrario: Sector primario de obtención de recursos naturales: agricultura, ganadería, silvicultura y caza, actividades de apoyo y comercio mayorista de materias primas agrarias.
+
+* Comercio: Compra y venta de productos al por mayor y menor, desde intermediación hasta venta final en tiendas, supermercados, mercadillos y e-commerce; abarca bienes como alimentación, vehículos, electrodomésticos, ropa, calzado, muebles y productos farmacéuticos.
+
+* Construcción: Cadena completa de edificación y obra civil: industrias extractivas y de materiales (cemento, hormigón, madera), construcción de edificios y obra civil (carreteras, puentes, redes), actividades especializadas (demolición, instalaciones, acabados) y alquiler de maquinaria.
+
+* Economía e Industria Digital (Teleco): Infraestructura y servicios de telecomunicaciones (cable, inalámbrico, satélite) que garantizan transmisión de voz y datos.
+
+* Educación: Enseñanza reglada y no reglada en todos los niveles (preprimaria a superior), formación profesional, cultural y deportiva, autoescuelas, actividades auxiliares a la educación, cuidado diurno e I+D académico.
+
+* Energía: Extracción, producción, transformación, transporte y distribución de energía: petróleo, gas, carbón; generación eléctrica (térmica, nuclear, hidro, eólica), transporte y comercialización; producción y distribución de gas y ciclo completo del agua (captación, depuración, distribución y tratamiento de residuales).
+
+* Finanzas: Servicios financieros y de seguros: banca, créditos, leasing, gestión de fondos, seguros y reaseguros, evaluación de riesgos, intermediación, y actividades relacionadas con la Seguridad Social obligatoria.
+
+* Gran distribución (Almacenes): Comercio minorista en grandes superficies no especializadas (hipermercados, supermercados, grandes almacenes) con amplia variedad de productos, predominando alimentación, bebidas y tabaco, con fuerte apoyo en publicidad.
+
+* Industria Alimentaria: Transformación de materias primas agrícolas, ganaderas y pesqueras en alimentos y bebidas para consumo humano o animal; incluye procesado, conservación, platos preparados, panadería, lácteos, bebidas, aceites, dulces, condimentos, tabaco y su comercio mayorista.
+
+* Información y Comunicación y Artes Gráficas: Medios (prensa, radio, TV, agencias), editorial (libros, revistas), producción audiovisual y artes escénicas; industria gráfica (papel, impresión, encuadernación, preimpresión) y servicios creativos y de comunicación (publicidad, fotografía, representación de medios).
+
+* Marítima y actividades portuarias: Transporte por agua (marítimo y fluvial) de pasajeros y mercancías y servicios auxiliares portuarios (manipulación de cargas, depósito, almacenamiento y actividades anexas logísticas portuarias).
+
+* Metal: Desde producción de metales básicos hasta fabricación de productos metálicos y maquinaria, equipos eléctricos y electrónicos, electrodomésticos, automoción y transporte (naval, ferroviario, aeronáutico); incluye instalación, mantenimiento, reparación y comercio mayorista y minorista asociado.
+
+* Pesca: Extracción de recursos acuáticos (pesca y acuicultura marina y de agua dulce) y actividades ligadas (construcción y reparación de barcos y obras hidráulicas).
+
+* Química / Laboratorio: Transformación de materias primas orgánicas e inorgánicas: química de base (gases, colorantes, fertilizantes), plásticos, caucho, fibras, farmacéutica, limpieza, perfumería, cosmética, pinturas, explosivos, colas y productos de minerales no metálicos (vidrio, cerámica, abrasivos).
+
+* Sanidad: Servicios de salud humana y animal y asistencia social: hospitales, medicina general y especializada, clínicas odontológicas, comercio farmacéutico, biotecnología, residencias y actividades veterinarias.
+
+* Servicios (Otros): Servicios a personas y cuidado de bienes: peluquerías, estética, mantenimiento físico, limpieza, lavandería, personal doméstico, seguridad, investigación privada, gestión cultural (museos, bibliotecas) y servicios funerarios.
+
+* Servicios a las empresas: Soporte profesional, técnico y operativo a empresas: TI (programación, consultoría, gestión de datos), legal y fiscal, contabilidad y auditoría, consultoría de gestión, estudios de mercado, ETTs, arquitectura e ingeniería e I+D.
+
+* Servicios Medioambientales: Gestión, protección y mejora ambiental: recogida, tratamiento, separación y reciclaje de residuos, descontaminación de suelos y aguas, limpieza de edificios e industrial, mantenimiento de zonas verdes y jardinería.
+
+* Textil y Confección y Piel: Cadena completa textil, cuero y calzado: preparación de materias primas, hilado, tejidos, confección, marroquinería, calzado, alfombras, diseño y reparación.
+
+* Transporte y Logística: Movimiento de mercancías y pasajeros (principalmente por carretera y ferrocarril) y actividades logísticas auxiliares: almacenamiento, manipulación, mudanzas, actividades postales y paquetería.
+
+* Turismo: Servicios para viajeros y turistas: alojamiento (hoteles, campings, apartamentos), restauración (restaurantes, bares, catering), agencias de viaje y operadores turísticos, ocio y entretenimiento (parques, espectáculos, juegos de azar).
+
